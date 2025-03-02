@@ -1,0 +1,14 @@
+#!/bin/sh
+set -e
+
+export _CC_PLIB_PREFIX=SYS1.CEE
+export _C89_PLIB_PREFIX=SYS1.CEE
+export _CC_CLIB_PREFIX=SYS1.CBC
+export _C89_CLIB_PREFIX=SYS1.CBC
+export XL_CONFIG=/etc/xlc.cfg
+
+mkdir -p obj
+xlc -c -o obj/main.o src/main.c
+as -o obj/tester.o src/tester.s >obj/tester.alst
+mkdir -p bin
+xlc -o bin/grubtest obj/main.o obj/tester.o >obj/grubtest.llst
