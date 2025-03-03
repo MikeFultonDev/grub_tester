@@ -1,0 +1,6 @@
+# Object and bin directories ignored
+bin
+obj
+
+# LE dump files
+CEEDUMP.*

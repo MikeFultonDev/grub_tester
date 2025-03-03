@@ -1,5 +1,7 @@
 #pragma linkage(ASMTEST, OS)
+int ASMTEST(int);
 int main(int argc, char* argv[])
 {
-  return ASMTEST(argc);
+  int x = ASMTEST(argc-1);
+  return x;
 }
